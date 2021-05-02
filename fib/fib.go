@@ -2,6 +2,8 @@ package fib
 
 import "errors"
 
+type Fib func(n int) int
+
 func fibRec(n int, memo map[int]int) int {
 	if n < 3 {
 		return 1
@@ -18,7 +20,7 @@ func fibRec(n int, memo map[int]int) int {
 
 func FibRec(n int) (int, error) {
 	if n < 1 {
-		return 0, errors.New("N cannot be less than one")
+		return 0, errors.New("n cannot be less than one")
 	}
 
 	return fibRec(n, make(map[int]int)), nil
@@ -26,7 +28,7 @@ func FibRec(n int) (int, error) {
 
 func FibLoop(n int) (int, error) {
 	if n < 1 {
-		return 0, errors.New("N cannot be less than one")
+		return 0, errors.New("n cannot be less than one")
 	}
 
 	a := []int{1, 1}
